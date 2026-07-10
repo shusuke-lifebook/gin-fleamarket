@@ -25,6 +25,8 @@ func main() {
   - air
     - サーバー自体も立ち上がる
 
+## 開発するAPIについて
+
 - 参考サイト
   - [Gin Web Framework](https://gin-gonic.com/ja/docs/quickstart/)
   - [air](https://github.com/air-verse/air)
