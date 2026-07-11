@@ -22,5 +22,6 @@ func main() {
 
 	router := gin.Default()
 	router.GET("/items", itemController.FindAll)
+	router.GET("/items/:id", itemController.FindById)
 	router.Run("localhost:8080")
 }
