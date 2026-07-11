@@ -82,7 +82,13 @@ if err := ctx.ShouldBindJSON(&input); err != nil {
   return
 }
 ```
-- 
+## データベース環境の構築
+- docker-compose.yaml
+- sudo chown -R $USER:$USER docker
+- sudo chmod -R 755 docker
+- http://localhost:81/
+  - gin@example.com
+  - ginpassword
 
 - 参考サイト
   - [Gin Web Framework](https://gin-gonic.com/ja/docs/quickstart/)

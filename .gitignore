@@ -67,3 +67,6 @@ Desktop.ini
 # --- tmp
 tmp/*
 !tmp/.gitkeep
+
+# --- docker
+docker/
