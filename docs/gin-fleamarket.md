@@ -90,7 +90,30 @@ if err := ctx.ShouldBindJSON(&input); err != nil {
   - gin@example.com
   - ginpassword
 
+## ORMとは
+- オブジェクト指向の言語とRDBの**非互換なデータをマッピング**する役割
+  - オブジェクト指向言語は「**現実世界の物事に即したデータモデル**」
+  - RDBは「**検索などRDBとしての役割を果たすために最適化されたモデル**」
+
+## ORMを使うメリット
+- SQLを書かなくてもDB操作ができる
+- データの定義が１箇所で済むので、メンテナンス性が高まる
+- データベースの種類やその特定のSQLの方言に関する心配が不要
+
+## ORMを使うデメリット
+- ORMライブラリの操作を学ぶ必要がある
+- パフォーマンスチューニングが難しい
+
+## GinのORMライブラリ
+- GORM
+  - GoのORMの中で非常に人気が高く広く使われる
+  - 高機能でフレキシブルなツール
+
+## godotenv
+- go get github.com/joho/godotenv
+
 - 参考サイト
   - [Gin Web Framework](https://gin-gonic.com/ja/docs/quickstart/)
   - [air](https://github.com/air-verse/air)
   - [Validator](https://pkg.go.dev/github.com/go-playground/validator/v10#section-readme)
+  - [godotenv](https://github.com/joho/godotenv#installation)
