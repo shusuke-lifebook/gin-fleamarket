@@ -118,6 +118,11 @@ if err := ctx.ShouldBindJSON(&input); err != nil {
 - go get -u gorm.io/driver/postgres
   - [データベースに接続する](https://gorm.io/ja_JP/docs/connecting_to_the_database.html)
 - [モデルの宣言](https://gorm.io/ja_JP/docs/models.html#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AB%E6%8C%87%E5%AE%9A%E5%8F%AF%E8%83%BD%E3%81%AA%E3%82%BF%E3%82%B0)
+- DBマイグレーション
+  - migrationsディレクトリを作成
+  - migration.goを作成
+  - go run migrations/migration.go
+    - マイグレーションの実行
 
 
 - 参考サイト
