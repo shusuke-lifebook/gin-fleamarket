@@ -112,8 +112,17 @@ if err := ctx.ShouldBindJSON(&input); err != nil {
 ## godotenv
 - go get github.com/joho/godotenv
 
+## GORM
+- go get -u gorm.io/gorm
+- go get -u gorm.io/driver/sqlite
+- go get -u gorm.io/driver/postgres
+  - [データベースに接続する](https://gorm.io/ja_JP/docs/connecting_to_the_database.html)
+- [モデルの宣言](https://gorm.io/ja_JP/docs/models.html#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AB%E6%8C%87%E5%AE%9A%E5%8F%AF%E8%83%BD%E3%81%AA%E3%82%BF%E3%82%B0)
+
+
 - 参考サイト
   - [Gin Web Framework](https://gin-gonic.com/ja/docs/quickstart/)
   - [air](https://github.com/air-verse/air)
   - [Validator](https://pkg.go.dev/github.com/go-playground/validator/v10#section-readme)
   - [godotenv](https://github.com/joho/godotenv#installation)
+  - [Gormインストール](https://gorm.io/ja_JP/docs/index.html#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
