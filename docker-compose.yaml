@@ -14,7 +14,7 @@ services:
       POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
       POSTGRES_DB: fleamarket
     hostname: postgres
-    restart: always
+    restart: no
     user: root
 
   pgadmin:
