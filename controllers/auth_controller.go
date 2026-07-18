@@ -9,7 +9,7 @@ import (
 )
 
 type IAuthController interface {
-	Singup(ctx *gin.Context)
+	Signup(ctx *gin.Context)
 }
 
 type AuthController struct {
@@ -20,7 +20,7 @@ func NewAuthController(service services.IAuthService) IAuthController {
 	return &AuthController{service: service}
 }
 
-func (c *AuthController) Singup(ctx *gin.Context) {
+func (c *AuthController) Signup(ctx *gin.Context) {
 	var input dto.SignupInput
 	if err := ctx.ShouldBindJSON(&input); err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
