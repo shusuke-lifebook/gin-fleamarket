@@ -157,6 +157,11 @@ if err := ctx.ShouldBindJSON(&input); err != nil {
 - 柔軟性
   - 任意のデータをTokenに含めることができる
 
+## JWTのインストール
+- go get -u github.com/golang-jwt/jwt/v5
+- SECRET_KEY
+  - openssl rand -hex 32
+
 - 参考サイト
   - [Gin Web Framework](https://gin-gonic.com/ja/docs/quickstart/)
   - [air](https://github.com/air-verse/air)
