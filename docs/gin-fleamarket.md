@@ -163,3 +163,4 @@ if err := ctx.ShouldBindJSON(&input); err != nil {
   - [Validator](https://pkg.go.dev/github.com/go-playground/validator/v10#section-readme)
   - [godotenv](https://github.com/joho/godotenv#installation)
   - [Gormインストール](https://gorm.io/ja_JP/docs/index.html#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
+  - [golang-jwt](https://github.com/golang-jwt/jwt?tab=readme-ov-file#installation-guidelines)
