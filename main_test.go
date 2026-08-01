@@ -1,14 +1,18 @@
 package main
 
 import (
+	"encoding/json"
 	"gin-fleamarket/infra"
 	"gin-fleamarket/models"
 	"log"
+	"net/http"
+	"net/http/httptest"
 	"os"
 	"testing"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
+	"github.com/stretchr/testify/assert"
 	"gorm.io/gorm"
 )
 
@@ -53,4 +57,24 @@ func setup() *gin.Engine {
 	router := setupRouter(db)
 
 	return router
+}
+
+func TestFindAll(t *testing.T) {
+	// テストのセットアップ
+	router := setup()
+
+	w := httptest.NewRecorder()
+	req, _ := http.NewRequest("GET", "/items", nil)
+
+	// APIリクエストに実行
+	router.ServeHTTP(w, req)
+
+	// APIの実行結果の取得
+	var res map[string][]models.Item
+	json.Unmarshal([]byte(w.Body.String()), &res)
+
+	// アサーション
+	assert.Equal(t, http.StatusOK, w.Code)
+	assert.Equal(t, 3, len(res["data"]))
+
 }
