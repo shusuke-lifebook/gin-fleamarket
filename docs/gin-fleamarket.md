@@ -181,6 +181,10 @@ if err := ctx.ShouldBindJSON(&input); err != nil {
 - 独自のミドルウェアを作成することが可能
   - gin.HandlerFuncを返却する関数を定義
 
+## cors
+- インストール
+  - go get github.com/gin-contrib/cors
+
 - 参考サイト
   - [Gin Web Framework](https://gin-gonic.com/ja/docs/quickstart/)
   - [air](https://github.com/air-verse/air)
@@ -189,3 +193,4 @@ if err := ctx.ShouldBindJSON(&input); err != nil {
   - [Gormインストール](https://gorm.io/ja_JP/docs/index.html#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
   - [golang-jwt](https://github.com/golang-jwt/jwt?tab=readme-ov-file#installation-guidelines)
   - [jwt.io](https://www.jwt.io/ja)
+  - [cors](https://github.com/gin-contrib/cors)
