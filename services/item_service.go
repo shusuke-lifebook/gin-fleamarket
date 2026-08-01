@@ -10,7 +10,7 @@ import (
 type IItemService interface {
 	FindAll() (*[]models.Item, error)
 	FindById(id uint) (*models.Item, error)
-	Create(createItemInput dto.CreateItemInput) (*models.Item, error)
+	Create(createItemInput dto.CreateItemInput, userId uint) (*models.Item, error)
 	Update(itemId uint, updateItemInput dto.UpdateItemInput) (*models.Item, error)
 	Delete(itemId uint) error
 }
@@ -31,12 +31,13 @@ func (s *ItemService) FindById(id uint) (*models.Item, error) {
 	return s.repository.FindById(id)
 }
 
-func (s *ItemService) Create(createItemInput dto.CreateItemInput) (*models.Item, error) {
+func (s *ItemService) Create(createItemInput dto.CreateItemInput, userId uint) (*models.Item, error) {
 	newItem := models.Item{
 		Name:        createItemInput.Name,
 		Price:       createItemInput.Price,
 		Description: createItemInput.Description,
 		SoldOut:     false,
+		UserID:      userId,
 	}
 	return s.repository.Create(newItem)
 }
