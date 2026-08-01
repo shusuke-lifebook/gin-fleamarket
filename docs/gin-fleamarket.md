@@ -185,6 +185,10 @@ if err := ctx.ShouldBindJSON(&input); err != nil {
 - インストール
   - go get github.com/gin-contrib/cors
 
+## testify
+- インストール
+  - go get github.com/stretchr/testify
+
 - 参考サイト
   - [Gin Web Framework](https://gin-gonic.com/ja/docs/quickstart/)
   - [air](https://github.com/air-verse/air)
@@ -194,3 +198,4 @@ if err := ctx.ShouldBindJSON(&input); err != nil {
   - [golang-jwt](https://github.com/golang-jwt/jwt?tab=readme-ov-file#installation-guidelines)
   - [jwt.io](https://www.jwt.io/ja)
   - [cors](https://github.com/gin-contrib/cors)
+  - [testify](https://github.com/stretchr/testify#installation)

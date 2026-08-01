@@ -6,6 +6,7 @@ bin/
 *.so
 *.dylib
 *.test
+!.env.test
 
 # --- Go coverage & profiling ---
 coverage.out
