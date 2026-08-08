@@ -1,26 +1,49 @@
 {
-  // --- Go 言語設定 (gopls) ---
+  // ============================================================
+  // Go 言語設定（gopls）
+  // ============================================================
+
+  // Go 言語サーバーを有効化（gopls）
   "go.useLanguageServer": true,
+
   "gopls": {
+    // 補完候補にプレースホルダーを含める（関数の引数など）
     "usePlaceholders": true,
+
+    // staticcheck を有効化（lint を強化）
     "staticcheck": true,
-    // alias import 補管に必須
+
+    // 未インポートのパッケージも補完候補に出す
     "completeUnimported": true,
+
+    // import のショートカット（Both = 最適）
     "importShortcut": "Both",
+
+    // gopls の解析設定（品質向上）
     "analyses": {
       "unusedparams": true,
       "shadow": true,
-      "nilness": true,
-    },
+      "nilness": true
+    }
   },
 
-  // --- フォーマット & インポート整理 ---
+  // ============================================================
+  // フォーマット & インポート整理
+  // ============================================================
+
+  // 保存時にフォーマット実行
   "editor.formatOnSave": true,
+
+  // 保存時にインポート整理も実行
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit",
+    "source.organizeImports": "explicit"
   },
+
+  // gofmt を標準フォーマッタとして使用
   "go.formatTool": "gofmt",
   "go.formatFlags": [],
+
+  // Go ツール（gopls / dlv / goimports）の自動更新
   "go.toolsManagement.autoUpdate": true,
 
   // goimports / gci を併用したい場合（任意）
@@ -29,50 +52,108 @@
   //   "goimports": "gci"
   // },
 
-  //  --- Code Runner 設定 ---
+  // ============================================================
+  // Code Runner 設定（go run）
+  // ============================================================
+
   "code-runner.executorMap": {
-    "go": "cd $dir && go run .",
+    "go": "cd $dir && go run ."
   },
   "code-runner.runInTerminal": true,
 
-  // --- ファイル関連 ---
+  // ============================================================
+  // ファイル関連
+  // ============================================================
+
   "files.exclude": {
     "**/bin": true,
     "**/obj": true,
     "**/vendor": true,
     "**/.cache": true,
     "**/go.sum": false,
-    "**/go.work.sum": false,
+    "**/go.work.sum": false
   },
+
+  // 改行コードと文字コードを統一
   "files.eol": "\n",
   "files.encoding": "utf8",
 
-  // --- ターミナル設定 (WSL2 Ubuntu) ---
+  // ============================================================
+  // ターミナル設定（WSL2）
+  // ============================================================
+
+  // mise の shims を PATH に追加（Go バージョン管理）
   "terminal.integrated.env.linux": {
     "GO111MODULE": "on",
-    "PATH": "${env:HOME}/.local/share/mise/shims:${env:PATH}",
+    "PATH": "${env:HOME}/.local/share/mise/shims:${env:PATH}"
   },
 
-  // --- VSCode UI カスタマイズ ---
+  // ============================================================
+  // VSCode UI カスタマイズ
+  // ============================================================
+
   "workbench.iconTheme": "vscode-icons",
   "workbench.colorTheme": "Monokai",
 
-  // --- git の設定 ---
+  // ============================================================
+  // Git 設定
+  // ============================================================
+
   "git.autofetch": true,
   "git.autofetchPeriod": 180,
 
-  // --- Markdown 専用設定 ---
+  // ============================================================
+  // Markdown 専用設定
+  // ============================================================
+
   "[markdown]": {
     "editor.insertSpaces": true,
-    "editor.inlineSuggest.enabled": false,
+    "editor.inlineSuggest.enabled": false, // Copilot 暴発防止
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
     "editor.quickSuggestions": {
       "other": false,
       "comments": false,
-      "strings": false,
+      "strings": false
     },
     "editor.renderWhitespace": "boundary",
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
+
+  // ============================================================
+  // GitHub Copilot（Pro の補完精度を最大化）
+  // ============================================================
+
+  // インライン補完を有効化（AI が先に提案）
+  "editor.inlineSuggest.enabled": true,
+
+  // 言語ごとの Copilot 有効化設定
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false, // 暴発防止
+    "markdown": true,
+    "yaml": true,
+    "json": true,
+    "php": true,
+    "go": true, // Go で Copilot を積極活用
+    "typescript": true,
+    "rust": true
+  },
+
+  // Copilot の提案を VSCode の通常補完より優先
+  "editor.suggest.showWords": false,
+  "editor.suggest.showSnippets": false,
+  "editor.suggest.showMethods": true,
+  "editor.suggest.showFunctions": true,
+  "editor.suggest.showVariables": true,
+
+  // ============================================================
+  // WSL2 安定化設定
+  // ============================================================
+
+  // 自動ポートフォワードを無効化（Docker/WSL の暴発防止）
+  "remote.autoForwardPorts": false,
+
+  // WSL のファイル監視を polling に変更（安定性向上）
+  "remote.WSL.fileWatcher.polling": true
 }
